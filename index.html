@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>FastHosts</title>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar logo" href="#">fasthosts</a>
+        <div class="collapse navbar-collapse navTextDiv">
+          <span class="navbar-text contactSales">
+            Sales
+            <span class="contact">0808 1686 777</span>
+          </span>
+          <span class="navbar-text contactSupport">
+            Support
+            <span class="contact">0333 0142 700</span>
+          </span>
+        </div>
+      </nav>
+   <!-- End Navbar -->
+
+   <!--Content-->
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+          </div>
+          <div class="col-sm middle-col">
+            <form class="create-account-form shadow p-3 mb-5 bg-white rounded" action="" @submit="checkForm">
+                <div class="form-header1">Create your Fasthosts account</div>
+                <div class="form-header2">Already have a Fasthosts account? <a class="login-in-link" href="#">Log In</a></div>
+
+                <br>
+
+                <div class="form-group form-content">
+                    <input type="text" class="form-control" id="inputName" placeholder="Name" required v-model="name" />
+                </div>
+
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email address" required  v-model="email"/>
+                </div>
+
+                <div class="input-group passwordDiv">
+                  <input v-bind:type="passwordType" class="form-control password" id="exampleInputPassword1" placeholder="Password" required  v-model="password"/>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary no-border" type="button" @click="switchVisibilty"><i class="fa fa-eye-slash" v-if="passwordType == 'password'"></i><i class="fa fa-eye" v-if="passwordType == 'text'"></i></button>
+                    </div>
+                </div>
+
+                <div class="password-message">{{ passwordMessage }}</div>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" :aria-valuenow="passwordStrengh" v-bind:style="{'width': passwordStrengh  + '%', 'background-color': validationBarColor}"  aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+                <br>
+
+                <div class="password-rules">
+                    <span class="password-rules-message">Your password should at least be 8 characters, and 3 of the following:</span>
+                    <ul class="password-rules-list">
+                      <li><i class="fa fa-check-circle psw-lower-case" aria-hidden="true" v-bind:style="{'color': lowerCaseCheck}"></i>Lowercase characters</li>
+                      <li><i class="fa fa-check-circle psw-uppercase" aria-hidden="true"  v-bind:style="{'color': upperCaseCheck}"></i>Uppercase characters</li>
+                      <li><i class="fa fa-check-circle psw-numbers" aria-hidden="true"  v-bind:style="{'color': numberCheck}"></i>Numbers</li>
+                      <li><i class="fa fa-check-circle psw-special-characters" aria-hidden="true"  v-bind:style="{'color': specialCheck}"></i>Special characters</li>
+                    </ul>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Keep me informed of special offers, product updates and information relevant
+                      to me. I understand I can change my preferences at any time.
+                  </label>
+                </div>
+                
+                <br>
+
+                <button type="submit" class="btn btn-primary create-account-btn">Create your account</button>
+
+                <br>
+
+                <div class="form-footer">
+                    <span>By creating your Fasthosts account, you agree to the </span>
+                    
+                    <br>
+
+                    <span style="padding-left: 12px;"><a class="t&c" href="#">Fasthosts Term & Conditions </a>and <a class="t&c" href="#">privacy notice.</a></span>
+                </div>
+
+              </form>
+
+              <div class="linkHome">
+                <a href="#">Back to fasthosts.co.uk</a>
+              </div>
+          </div>
+
+          <div class="col-sm">
+          </div>
+
+        </div>
+
+      </div> 
+      <!--End Content-->
+
+<!--JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
+  
+  <script type="text/javascript">
+
+  /* Constants values for form */
+
+  // Input types
+  var PASSWORD_INPUT_TYPE = 'password';
+  var TEXT_INPUT_TYPE = 'text';
+
+  // Checked values
+  var CHECKED = '#2BA230';
+  var NONE = null;
+
+  // Constants for validation progress bar
+  var WEAK = '#D6031C';
+  var STRONG = '#FF7F00';
+  var VERY_STRONG = CHECKED;
+  var BAR_COLOURS = [WEAK, WEAK, STRONG, STRONG, VERY_STRONG];
+
+  /* Validation Regex rules */
+  var LOWER_CASE_LETTERS_REGEX = /[a-z]/g
+  var UPPER_CASE_LETTERS_REGEX = /[A-Z]/g;
+  var NUMBERS_REGEX = /[0-9]/g;
+  var SPECIAL_CHARS_REGEX = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g; 
+
+  /* Message constants */
+  var MESSAGES = {
+    "required": "Strong password required",
+    "weak": "Weak (not strong enough)",
+    "strong": "Strong",
+    "very_strong": "Very strong",
+    "success": "Validation passed form"
+  }
+
+  /* Begin Form Vue logic */
+  var form = new Vue({
+      "el": ".create-account-form",
+      data: {
+          passwordMessage: MESSAGES['required'],
+          passwordStrengh: 0,
+          passwordScore: 0,
+          name: null,
+          email: null,
+          password: null,
+          lowerCaseCheck: NONE,
+          upperCaseCheck: NONE,
+          numberCheck: NONE,
+          specialCheck: NONE,
+          validationBarColor: WEAK,
+          passwordType: PASSWORD_INPUT_TYPE
+      },
+
+      watch: {
+          password: function(theValue) {
+              this.validPassword();
+          }
+      },
+
+      methods: {
+          switchVisibilty: function() {
+              this.passwordType = this.passwordType==PASSWORD_INPUT_TYPE? TEXT_INPUT_TYPE: PASSWORD_INPUT_TYPE;
+          },
+          checkForm: function(e) {
+              e.preventDefault();
+              // Check name is required, highlight in red.
+              // Check email is required and correct format, hightlight in red if not.
+              // Check password
+              var success = this.validPassword();
+              if (success) {
+                alert(MESSAGE['success']);
+              }
+          },
+
+          validPassword: function() {
+            var currentPasswordStrengh  = 0;
+              this.lowerCaseCheck = NONE;
+              this.upperCaseCheck = NONE;
+              this.numberCheck = NONE;
+              this.specialCheck = NONE;
+              if (this.password==null || this.password=="") {
+                  this.passwordMessage = MESSAGES['required'];
+                  this.passwordStrengh = 0;
+              }
+              else {
+                  if (this.password.match(LOWER_CASE_LETTERS_REGEX)) {
+                    currentPasswordStrengh++;
+                      this.lowerCaseCheck = CHECKED;
+                  }
+                  
+                  if (this.password.match(UPPER_CASE_LETTERS_REGEX)) {
+                    currentPasswordStrengh++;
+                      this.upperCaseCheck = CHECKED;
+                  }
+
+                  if (this.password.match(NUMBERS_REGEX)) {
+                    currentPasswordStrengh++;
+                      this.numberCheck = CHECKED;
+                  }
+
+                  if (this.password.match(SPECIAL_CHARS_REGEX)) {
+                    currentPasswordStrengh++;
+                      this.specialCheck = CHECKED;
+                  }
+                  
+                  this.validationBarColor = BAR_COLOURS[currentPasswordStrengh];
+                  this.passwordStrengh = currentPasswordStrengh/4 * 100;
+                  switch(currentPasswordStrengh) {
+                      case 1:
+                      case 2: 
+                          this.passwordMessage = MESSAGES['weak'];
+                          break;   
+                      case 3:
+                          this.passwordMessage = MESSAGES['strong'];
+                          break;  
+                      case 4: 
+                          this.passwordMessage = MESSAGES["very_strong"];
+                  }
+
+                  if (this.password.length<8) {
+                      this.passwordMessage = MESSAGES['weak'];                  
+                    return false;
+                  }
+
+                  else {
+
+                    return currentPasswordStrengh>=3;
+
+                  }
+              }
+
+          }
+
+      }
+
+  })
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+.navbar {
+    background-color: #1C2A41;
+    color: #FFFFFF;
+}
+
+.logo {
+    color: white;
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+    margin-left: 100px;
+}
+
+.logo:hover{
+    color: #FFFFFF !important;
+}
+
+.contact {
+    color: #0BC9EB;
+    cursor: default;
+}
+
+.navTextDiv {
+    justify-content: flex-end;
+    font-size: 12px;
+}
+
+.navbar-text {
+    cursor: default;
+}
+
+.contactSupport {
+    padding-left: 50px;
+    padding-right: 50px;
+    cursor: default;
+}
+
+.middle-col {
+    margin-top: 50px;
+}
+
+form {
+    padding: 20px;
+    width: 425px;
+}
+
+.form-check {
+    font-size: 10px;
+}
+
+.create-account-btn {
+    display: block;
+    margin: 0px auto;
+}
+
+.form-header2 {
+    font-size: 10px;
+}
+
+.form-footer {
+    font-size: 11px;
+    display: table;
+    margin: 0px auto;
+}
+
+input {
+    font-size: 12px;
+}
+
+.password-message {
+    font-size: 10px;
+    padding-bottom: 5px;
+}
+
+.password-rules-list {
+    list-style: none;
+}
+
+.fa-check-circle {
+    padding-right: 15px;
+    color: lightgrey;
+}
+
+.password-rules {
+    font-size: 12px;
+}
+
+.password-rules-list, .password-rules-list li {
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.password {
+    border-right: 0;
+    box-shadow: none;
+}
+
+.no-border {
+    border-left: 0px !important;
+    box-shadow: none;
+    border: 1px  solid lightgrey;
+    background-color: white;
+}
+
+input:focus, input.form-control:focus {
+    outline-style: none !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border: 1px solid lightgrey !important;
+    border-right: 0px !important;
+}
+
+.form-header1 {
+    padding-bottom: 10px;
+}
+
+.passwordDiv {
+    padding-bottom: 10px;
+}
+
+.linkHome {
+    display: table;
+    margin: 0 auto;
+    font-size: 10px;
+    margin-bottom: 30px;
+}
+
+.password-rules-list {
+    padding-top: 10px;
+}
+
+.btn-outline-secondary:focus {
+    outline-style: none !important;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    border: 1px solid lightgrey !important;
+    border-left: 0px !important;
+
+}.btn-outline-secondary:hover {
+    color: #1C2A41;
+    background-color: white;
+    border-color: lightgrey;
+}
+
+
+
